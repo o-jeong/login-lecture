@@ -15,7 +15,6 @@
 // });
 
 
-//라우팅
 "use strict";
 
 // 모듈
@@ -27,6 +26,9 @@ const home = require("./src/routes/home"); // 해당 경로에 있는 자바스�
 
 app.set("views", "./src/views");
 app.set("view engine", "ejs");
+app.use(express.static(`${__dirname}/src/public`))
+//__dirname에는 현재 app.js의 위치를 반환
+// 위 주소를 정적 경로로 추가
 
 app .use('/', home);  // use -> 미들 웨어를 등록해주는 메서드
 // 루트 경로로 들어오면 home으로 보내줌

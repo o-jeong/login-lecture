@@ -1,4 +1,3 @@
-// 라우팅 분리
 "use strict";
 
 const express = require("express");
