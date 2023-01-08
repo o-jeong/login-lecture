@@ -14,7 +14,7 @@
 //     console.log("http로 가동된 서버");
 // });
 
-
+// app.js(메인파일)에서 node라는 서버의 기본 설정을 해줌
 "use strict";
 
 // 모듈

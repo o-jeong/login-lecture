@@ -26,19 +26,17 @@ const process = {
             pw = req.body.pw;
         
         // id, pw 검증
+        const response = {};
         if (users.id.includes(id)){
             const idx = users.id.indexOf(id);
             if (users.pw[idx] === pw){
-                return res.json({
-                    sucess: true,
-                });
+                response.success = true;
+                return res.json(response);
             }
         }
-
-        return res.json({
-            sucess: false,
-            msg: "로그인에 실패하셨습니다.",
-        });
+        response.success = false;
+        response.msg = "로그인에 실패하셨습니다."
+        return res.json(response);
     }
 }
 
