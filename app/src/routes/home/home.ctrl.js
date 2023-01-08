@@ -1,5 +1,5 @@
 "use strict";
-
+const UserStorage = require("../../models/UserStorage")
 const output = {
     hello: (req, res) => {
         res.render('home/index')
@@ -14,17 +14,14 @@ const output = {
     }
 };
 
-const users = {
-    id: ["jijeong", "ojeong", "yujeong"],
-    pw: ["1234", "1234", "123456"]
-};
-
 const process = {
     login: (req,res) => {
-        console.log(req.body);   // 프론트엔드에서 전딜한 요청 데이터를 담음
+        console.log(req.body);   // 프론트엔드에서 전달한 요청 데이터를 담음
         const id = req.body.id,
             pw = req.body.pw;
-        
+        // const userStorage = new UserStorage(); 
+        // => 굳이 인스턴스화 해주지 않아도 된다.
+        const users = UserStorage.getUsers("id","pw");
         // id, pw 검증
         const response = {};
         if (users.id.includes(id)){
