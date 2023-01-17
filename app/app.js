@@ -1,25 +1,12 @@
-// express 프레임워크 없이 개발하는 방법
-// const http = require("http")  // http는 내장 모듈이므로 따로 다운이 필요 없음
-// const app = http.createServer((req,res) => {
-//     res.writeHead(200,{ "Content-Type": "text/html; charset=utf-8"})
-//     if (req.url == '/'){
-//         res.end("여기는 루트입니다.")
-//     } else if (req.url == "/login"){
-//         res.end("여기는 로그인 화면입니다.")
-//     }
-// });
-// => 프레임워크를 사용해야하는 이유 : 코드가 지저분해짐, 한글 처리를 따로 해줘야함
-
-// app.listen(3001,() => {
-//     console.log("http로 가동된 서버");
-// });
-
-// app.js(메인파일)에서 node라는 서버의 기본 설정을 해줌
+// 프로젝트 메인 파일 겸 각종 설정
 "use strict";
 
 // 모듈
 const express = require("express");
 const bodyParser = require("body-parser");
+const dotenv = require("dotenv");
+dotenv.config();
+
 const app = express();
 
 //라우팅
